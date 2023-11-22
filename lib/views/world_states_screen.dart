@@ -53,51 +53,48 @@ class _WorldStatesScreenState extends State<WorldStatesScreen>
                           controller: _animationController,
                         ),
                       );
-                    } else {
-                      return Column(
-                        children: [
-                          PieChart(
-                            dataMap: const {
-                              "Total": 20,
-                              "Recovered": 15,
-                              "Deaths": 5,
-                            },
-                            chartRadius:
-                                MediaQuery.of(context).size.width / 3.2,
-                            legendOptions: const LegendOptions(
-                                legendPosition: LegendPosition.left),
-                            animationDuration:
-                                const Duration(milliseconds: 1200),
-                            chartType: ChartType.ring,
-                            colorList: colorsList,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical:
-                                    MediaQuery.of(context).size.height * .06),
-                            child: Card(
-                              child: Column(
-                                children: [
-                                  reusableRow("Total", "200"),
-                                  reusableRow("Total", "200"),
-                                  reusableRow("Total", "200"),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: const Color(0xff1AA260),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: const Center(
-                              child: Text("Track Countries"),
-                            ),
-                          ),
-                        ],
-                      );
                     }
+                    return Column(
+                      children: [
+                        PieChart(
+                          dataMap: const {
+                            "Total": 20,
+                            "Recovered": 15,
+                            "Deaths": 5,
+                          },
+                          chartRadius: MediaQuery.of(context).size.width / 3.2,
+                          legendOptions: const LegendOptions(
+                              legendPosition: LegendPosition.left),
+                          animationDuration: const Duration(milliseconds: 1200),
+                          chartType: ChartType.ring,
+                          colorList: colorsList,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical:
+                                  MediaQuery.of(context).size.height * .06),
+                          child: Card(
+                            child: Column(
+                              children: [
+                                reusableRow("Total", "200"),
+                                reusableRow("Total", "200"),
+                                reusableRow("Total", "200"),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: const Color(0xff1AA260),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Center(
+                            child: Text("Track Countries"),
+                          ),
+                        ),
+                      ],
+                    );
                   }),
             ],
           ),
